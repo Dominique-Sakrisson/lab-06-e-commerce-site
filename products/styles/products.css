@@ -21,7 +21,8 @@ img {
 .car-img{
     width: 200px;
     height: 125px;
-   
+   border-radius: 25px;
+   margin: 0 10px;
 }
 .economy, .sport, .crossover {
     height: 250px;
