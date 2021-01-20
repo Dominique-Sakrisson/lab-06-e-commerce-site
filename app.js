@@ -1,4 +1,6 @@
 // import functions and grab DOM elements
+//import { renderCars } from './render-cars.js';
+//import { cars } from './data.js';
 
 // initialize state
 
