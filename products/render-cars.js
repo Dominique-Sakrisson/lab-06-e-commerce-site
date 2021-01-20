@@ -1,6 +1,3 @@
-//import { cars } from './data.js';
-
-
 export function renderCars(cars){
     const li = document.createElement('li');
     li.className = cars.category;
