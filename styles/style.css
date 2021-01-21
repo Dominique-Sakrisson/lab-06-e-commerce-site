@@ -132,3 +132,15 @@ footer {
 table{
       width: 80%;    
 }
+
+.odd{
+    background-color: teal;
+}
+
+.even {
+    background-color: tomato;
+}
+
+.total{
+    background-color: silver;
+}
