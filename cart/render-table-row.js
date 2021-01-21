@@ -17,4 +17,3 @@ export function renderTableRow(cartItem, car, linePrice){
     tr.append(tdName, tdQuant, tdPrice, tdLinePrice);
     return tr;
 }
-
