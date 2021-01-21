@@ -1,6 +1,6 @@
-import { getPriceTotal, renderTableRow } from './render-table-row.js';
+import { renderTableRow } from './render-table-row.js';
 import { cart } from '../data/cart-data.js';
-import { findById } from '../utils.js';
+import { getPriceTotal, findById, calcItemTotal } from '../utils.js';
 import { cars } from '../data/data.js';
 import { alertMsg } from './cart-handler.js';
 
@@ -18,15 +18,19 @@ let total = 0;
 for (let item of cart) {
     const car = findById(item.id, cars);
     
+    const lineTotal = calcItemTotal(item.quantity, car.price);
+
+   
     const carTotalPrice = getPriceTotal(item, car);
 
     total += carTotalPrice;
     
-    const tableRowEl = renderTableRow(item, car);
+    const tableRowEl = renderTableRow(item, car, lineTotal);
     table.append(tableRowEl);
 }
 
 td3.textContent = `Order total: $${total}`;
+
 
 tr.append(td1, td2, td3);
 
