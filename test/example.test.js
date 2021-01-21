@@ -3,6 +3,7 @@ import { renderCars } from '../products/render-cars.js';
 import { cars } from '../data/data.js';
 
 import { calcItemTotal, findById, getPriceTotal } from '../utils.js';
+import { renderTableRow } from '../cart/render-table-row.js';
 
 
 const test = QUnit.test;
@@ -136,4 +137,34 @@ test('This Function will take in two integer values and return the product', (ex
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
+});
+
+//render 
+test('This Function will take in two integer values and return the product', (expect) => {
+    //Arrange
+    const cart = {
+        id: 'bmw',
+        quantity: 1,
+    };
+
+    const car = {
+        id: 'bmw',
+        name: 'BMW 5 Series',
+        image: 'bmw.jpg',
+        description: 'A sporty vroom vroom machine',
+        category: 'sport',
+        price: 60000,
+    };
+
+    const tdLinePrice = 60000;
+    // Set up your arguments and expectations
+    const expected = '<tr><td>BMW 5 Series</td><td>1</td><td>60000</td><td>60000</td></tr>' ;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = renderTableRow(cart, car, tdLinePrice);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual.outerHTML, expected);
 });
