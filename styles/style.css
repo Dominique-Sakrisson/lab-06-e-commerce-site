@@ -129,8 +129,6 @@ footer {
 
   }
 
-  table{
-      width: 80%;
-      position: relative;
-      top: 200px;
-  }
+table{
+      width: 80%;    
+}
