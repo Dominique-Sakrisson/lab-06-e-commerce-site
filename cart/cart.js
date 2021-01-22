@@ -3,10 +3,12 @@ import { cart } from '../data/cart-data.js';
 import { getPriceTotal, findById, calcItemTotal } from '../utils.js';
 import { cars } from '../data/data.js';
 import { alertMsg } from './cart-handler.js';
+import { getCart, clearCart, addToCart } from './cart-api.js';
 
 
 const table = document.querySelector('table');
-const orderButton = document.querySelector('button');
+const orderButton = document.getElementById('place-order');
+const clearButton = document.getElementById('clear-cart');
 
 const tr = document.createElement('table');
 const td1 = document.createElement('td');
@@ -45,3 +47,4 @@ tr.classList.add('total');
 table.append(tr);
 
 orderButton.addEventListener('click', alertMsg);
+clearButton.addEventListener('click', clearCart);
