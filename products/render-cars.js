@@ -1,3 +1,6 @@
+import { addToCart } from '../cart/cart-api.js';
+//import { findById } from '../utils.js';
+
 export function renderCars(cars){
     const li = document.createElement('li');
     li.className = cars.category;
@@ -17,7 +20,6 @@ export function renderCars(cars){
     const para = document.createElement('p');
     para.textContent = cars.description;
     li.append(para);
-    //title.textContent = cars.name;
 
     const pricePara = document.createElement('p');
     pricePara.textContent = `$${cars.price}`;
@@ -25,6 +27,10 @@ export function renderCars(cars){
 
     const button = document.createElement('button');
     button.textContent = 'Add to cart';
+    button.addEventListener('click', () =>{
+        addToCart(cars.id);
+  
+    });
     li.append(button);
     
     return li;
