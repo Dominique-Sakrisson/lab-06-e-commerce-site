@@ -9,6 +9,7 @@ export function findById(id, array){
 }
 
 export function getPriceTotal(cartItem, cars){
+    
     return cartItem.quantity * cars.price;
 }
 
