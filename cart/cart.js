@@ -3,7 +3,7 @@ import { renderTableRow } from './render-table-row.js';
 import { getPriceTotal, findById, calcItemTotal } from '../utils.js';
 import { cars } from '../data/data.js';
 import { alertMsg } from './cart-handler.js';
-import { getCart, clearCart, addToCart } from './cart-api.js';
+import { getCart, clearCart} from './cart-api.js';
 
 
 const table = document.querySelector('table');
@@ -38,7 +38,10 @@ for (let item of cart) {
     table.append(tableRowEl);
     classCount++;
 }
-clearButton.addEventListener('click', clearCart);
+clearButton.addEventListener('click', () => {
+    clearCart();
+    window.location.reload();
+});
 
 if (cart.length === 0){
     orderButton.disabled = true;
@@ -46,20 +49,14 @@ if (cart.length === 0){
     orderButton.addEventListener('click', () => {
         localStorage.removeItem('CART');
         alert('Order placed: \n' + JSON.stringify(cart, true, 2));
-
         window.location = '../';
-
     });
-
 }
 
 td1.textContent = `Order total: $${total}`;
-
 
 tr.append(td1, td2, td3);
 tr.classList.add('total');
 
 table.append(tr);
-
 orderButton.addEventListener('click', alertMsg);
-

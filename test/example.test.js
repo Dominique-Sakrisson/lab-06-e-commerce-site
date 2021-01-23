@@ -1,10 +1,9 @@
 // IMPORT MODULES under test here:
 import { renderCars } from '../products/render-cars.js';
 import { cars } from '../data/data.js';
-
 import { calcItemTotal, findById, getPriceTotal } from '../utils.js';
 import { renderTableRow } from '../cart/render-table-row.js';
-
+import { getCart, clearCart, addToCart } from '../cart/cart-api.js';
 
 const test = QUnit.test;
 //renderCars test
@@ -168,4 +167,143 @@ test('This Function will take in two integer values and return the product', (ex
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual.outerHTML, expected);
 });
+
+//addTocart
+test('This Function will add an item to our cart', (expect) => {
+    //Arrange
+    const car = {
+        id: 'bmw',
+        name: 'BMW 5 Series',
+        image: 'bmw.jpg',
+        description: 'A sporty vroom vroom machine',
+        category: 'sport',
+        price: 60000,
+    };
+
+
+
+    const CART = 'CART';
+    const emptyCart = [];
+    
+    const stringCartItem = JSON.stringify(emptyCart);
+    localStorage.setItem(CART, stringCartItem);
+   
+    // Set up your arguments and expectations
+    const expected = [
+        {
+          "id": "bmw",
+          "quantity": 1
+        }
+      ];
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = addToCart(car.id);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+//clearCart
+test('This Function will clear out the items from the cart', (expect) => {
+    //Arrange
+
+    const CART = 'CART';
+    const notEmptyCart = 
+    {
+        id: 'toyo',
+        name: 'Toyota Corolla',
+        image: 'toyota.jpg',
+        description: 'An economic little get-around-mobile',
+        category: 'economy',
+        price: 22500,
+    };
+    
+    const stringCartItem = JSON.stringify(notEmptyCart);
+    localStorage.setItem(CART, stringCartItem);
+    
+    // Set up your arguments and expectations
+    const expected = [];
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = clearCart();
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+//getCart empty
+test('This Function will return and empty array object because the cart is empty', (expect) => {
+    //Arrange
+
+    const CART = 'CART';
+    const defaultEmptyCart = [];
+    
+  
+
+    const stringEmptyCart = JSON.stringify(defaultEmptyCart);
+
+    localStorage.setItem(CART, stringEmptyCart);
+
+    
+    // Set up your arguments and expectations
+    const expected = [] ;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = getCart();
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+//getCart that is not empty
+test('This Function will return the item(s) that are in the cart', (expect) => {
+    //Arrange
+
+    const CART = 'CART';
+    const notEmptyCart = 
+    {
+        id: 'toyo',
+        name: 'Toyota Corolla',
+        image: 'toyota.jpg',
+        description: 'An economic little get-around-mobile',
+        category: 'economy',
+        price: 22500,
+    };
+    
+    const stringCartItem = JSON.stringify(notEmptyCart);
+    
+    localStorage.setItem(CART, stringCartItem);
+    
+    // Set up your arguments and expectations
+    const expected = 	
+    {
+      "category": "economy",
+      "description": "An economic little get-around-mobile",
+      "id": "toyo",
+      "image": "toyota.jpg",
+      "name": "Toyota Corolla",
+      "price": 22500
+    };
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = getCart();
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+
+
+
+
+
+
 

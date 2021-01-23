@@ -8,7 +8,7 @@ export function getCart(){
     
     if (stringCart) {
         const parsedCart = JSON.parse(stringCart);
-        console.log(parsedCart);
+       
         return parsedCart;
     } else {
         //No cart was found, give the user a cart to work with
@@ -26,6 +26,7 @@ export function clearCart(){
     const stringDefaultEmptyCart = JSON.stringify(defaultEmptyCart);
     //set the empty cart to the local storage cart
     localStorage.setItem(CART, stringDefaultEmptyCart);
+    return getCart();
 }
 
 export function addToCart(id){
@@ -42,4 +43,5 @@ export function addToCart(id){
     }
     const stringLineItem = JSON.stringify(localCart);
     localStorage.setItem(CART, stringLineItem);
+    return getCart();
 }

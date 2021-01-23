@@ -1,0 +1,25 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color3);
+    box-shadow: var(--shadow);
+    margin: 20px auto 40px auto;
+}
+
+header ul, header li{
+    list-style: none;
+}
+
+header a{
+    font-size: 1.3rem;
+    color: #fff; 
+}
+
+nav li {
+    display: inline-block;
+    width: 100px;
+    margin: auto 20px;
+    background-color: rgba(25, 80, 60, .6);
+    text-align: center;
+    border-radius: 15px;
+}

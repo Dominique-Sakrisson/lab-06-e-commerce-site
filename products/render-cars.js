@@ -11,6 +11,7 @@ export function renderCars(cars){
     li.append(h3);
 
     li.textContent = `${cars.name}`;
+    li.style.fontSize = '1.3rem';
 
     const img = document.createElement('img');
     img.src = '../assets/' + cars.image;
