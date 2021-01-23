@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/header-style.css">
+    
     <link rel="stylesheet" href="../styles/products.css">
+    <link rel="stylesheet" href="../styles/header-style.css">
     <link rel="stylesheet" href="../styles/style.css">
     
     <title>Our Products</title>
@@ -20,7 +21,7 @@
             <ul>
                 <li><a href="../index.html" disable>HomePage</a></li>
                 <li><a href="#">Shop</a></li>
-                <li><a href="../cart">Your Cart</a></li>
+                <li><a href="../cart" disabled>Your Cart</a></li>
             </ul>
         </nav>
         
@@ -32,12 +33,20 @@
             Welcome to our products page
         </h2>
 
-        <div>
+        <div class="items-container">
             <ul id="car-list">
             </ul>
         </div>
-     <h2 class="cart-link"><a href="../cart">Check out your cart <img class="main-logo" src="../assets/shopping-cart-logo-vector-5.png"/></a>  </h2>
+
     </section>
+
+    <a  href="../cart">
+        <div class="cart-link">
+            <h2>Check out your cart</h2> 
+            <img class="main-logo" src="../assets/shopping-cart-logo-vector-5.png"/>
+        </div>
+    </a>
+    
      <script type="module" src="products.js"></script>
 
 </body>

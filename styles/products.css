@@ -1,49 +1,54 @@
-
-button{
-    display: inline;
-}
-
-div{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-img {
-    width: 50px;
-   display: inline-block;
-}
 .car-img{
     display: block;
-    position: relative;
-    left: 15%;
-    width: 200px;
-    height: 125px;
+    width: 425px;
+    height: 250px;
     border-radius: 25px;
-    margin: 0 10px;
+    margin:  10px auto;
 }
 .economy, .sport, .crossover {
-    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
     padding: 20px;
     margin: 10px;
-}
-
-.cart-link{
-    background-color: rgba(0, 0, 0, .2);
-    padding:  10px;
-    border: rgba(0, 0, 0,1 ) solid 1px ;
-    border-radius: 10px;
+    text-align: center;
 }
 
 .main-section {
     text-align: center;
- 
-    margin: 0;
+    margin: 20px auto;
     height: 100%;
     background-color: rgba(25, 100, 60, .2);
 }
-ul {
-    display: inline-block;
+
+.economy{
+    background-color: silver;
 }
-li {
-    list-style: none;
+
+.sport{
+    background-color: tomato;
+}
+
+.crossover{
+    background-color: teal;
+}
+
+
+button{
+   margin: auto;
+    width: 100px;
+}
+
+.main-logo{
+    width: 100px;
+    height: 100px;
+}
+
+.cart-link{
+    background-color: rgba(0, 0, 0, .2);
+    border: rgba(0, 0, 0,1 ) solid 1px ;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
 }

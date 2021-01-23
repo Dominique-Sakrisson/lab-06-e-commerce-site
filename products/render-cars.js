@@ -30,7 +30,6 @@ export function renderCars(cars){
     button.textContent = 'Add to cart';
     button.addEventListener('click', () =>{
         addToCart(cars.id);
-  
     });
     li.append(button);
     
