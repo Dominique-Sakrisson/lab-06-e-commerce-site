@@ -1,6 +1,7 @@
 import { addToCart } from '../cart/cart-api.js';
 //import { findById } from '../utils.js';
 
+
 export function renderCars(cars){
     const li = document.createElement('li');
     li.className = cars.category;
@@ -26,12 +27,32 @@ export function renderCars(cars){
     pricePara.textContent = `$${cars.price}`;
     li.append(pricePara);
 
-    const button = document.createElement('button');
-    button.textContent = 'Add to cart';
-    button.addEventListener('click', () =>{
+    const addButton = document.createElement('button');
+    addButton.textContent = 'Add to cart';
+    addButton.addEventListener('click', () =>{
         addToCart(cars.id);
     });
-    li.append(button);
+    
+
+    const select = document.createElement('select');
+    select.textContent = 'Add to cart';
+    
+    const option1 = document.createElement('option');
+    option1.textContent = 1;
+    const option2 = document.createElement('option');
+    option2.textContent = 2;
+    const option3 = document.createElement('option');
+    option3.textContent = 3;
+    const option4 = document.createElement('option');
+    option4.textContent = 4;
+
+    
+    select.append(option1, option2, option3, option4);
+
+    li.append(select);
+
+    li.append(addButton);
+
     
     return li;
 }

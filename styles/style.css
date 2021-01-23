@@ -117,13 +117,13 @@ table{
 }
 
 img{
-  width: 300px;
-  height: 200px;
+  width: 350px;
+  height: 225px;
   border-radius: 40px;
 }
 
 .side-by-side{
-    width: 325px;
+    width: 350px;
     height: 500px;
     display: inline-block;
     text-align: center;
@@ -131,9 +131,7 @@ img{
     border-radius: 40px;
 }
 
-.side-by-side a{
-    color: #fff;
-}
+
 .side-by-side a:visited{
     text-decoration: none; 
     decoration: none; 
@@ -156,14 +154,19 @@ img{
     text-align: center;
 }
 
-.economy{
-    background-color: silver;
+.economy, .economy a{
+    color: silver;
 }
 
-.sport{
-    background-color: tomato;
+.sport, .sport a{
+    color: tomato;
+   
 }
 
-.crossover{
-    background-color: teal;
+.crossover, .crossover a{
+    color: teal;
+}
+
+.container > .economy {
+    color: silver;
 }

@@ -10,7 +10,7 @@ const test = QUnit.test;
 test('This function will take in a car objectt and return a list item properly formatted in HTML code', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = '<li class="economy" title="An economic little get-around-mobile">Toyota Corolla<img src="../assets/toyota.jpg" class="car-img"><p>An economic little get-around-mobile</p><p>$22500</p><button>Add to cart</button></li>';
+    const expected = '<li class="economy" title="An economic little get-around-mobile" style="font-size: 1.3rem;">Toyota Corolla<img src="../assets/toyota.png" class="car-img"><p>An economic little get-around-mobile</p><p>$22500</p><button>Add to cart</button></li>';
     
     //Act 
     // Call the function you're testing and set the result to a const

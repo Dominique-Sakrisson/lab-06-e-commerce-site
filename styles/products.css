@@ -24,14 +24,17 @@
 
 .economy{
     background-color: silver;
+    color: white;
 }
 
 .sport{
     background-color: tomato;
+    color: white;
 }
 
 .crossover{
     background-color: teal;
+    color: white;
 }
 
 
@@ -52,3 +55,4 @@ button{
     width: 50%;
     margin: auto;
 }
+
