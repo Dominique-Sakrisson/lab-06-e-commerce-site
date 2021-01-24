@@ -6,7 +6,7 @@ export const cars = [
     {
         id: 'toyo',
         name: 'Toyota Corolla',
-        image: 'toyota.jpg',
+        image: 'toyota.png',
         description: 'An economic little get-around-mobile',
         category: 'economy',
         price: 22500,
@@ -14,7 +14,7 @@ export const cars = [
     {
         id: 'bmw',
         name: 'BMW 5 Series',
-        image: 'bmw.jpg',
+        image: 'bmw.png',
         description: 'A sporty vroom vroom machine',
         category: 'sport',
         price: 60000,
@@ -22,7 +22,7 @@ export const cars = [
     {   
         id: 'honda',
         name: 'Honda CR-V',
-        image: 'honda.jpg',
+        image: 'honda.png',
         description: 'Be it children or pasta, this thing fits alot',
         category: 'crossover',
         price: 26470,
