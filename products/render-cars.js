@@ -33,26 +33,30 @@ export function renderCars(cars){
         addToCart(cars.id);
     });
     
-
-    const select = document.createElement('select');
-    select.textContent = 'Add to cart';
-    
-    const option1 = document.createElement('option');
-    option1.textContent = 1;
-    const option2 = document.createElement('option');
-    option2.textContent = 2;
-    const option3 = document.createElement('option');
-    option3.textContent = 3;
-    const option4 = document.createElement('option');
-    option4.textContent = 4;
-
-    
-    select.append(option1, option2, option3, option4);
-
-    li.append(select);
-
+    li.append(addSelect(cars.id));
     li.append(addButton);
 
-    
     return li;
+}
+
+function addSelect(id){
+    //create a select element on DOM, and assign id attribute
+    const select = document.createElement('select');
+    select.setAttribute('id', `select`);
+    //create options, set text content, and values
+    const option1 = document.createElement('option');
+    option1.textContent = 1;
+    option1.value = 1;
+    const option2 = document.createElement('option');
+    option2.textContent = 2;
+    option2.value = 2;
+    const option3 = document.createElement('option');
+    option3.textContent = 3;
+    option3.value = 3;
+    const option4 = document.createElement('option');
+    option4.textContent = 4;
+    option4.setAttribute('value', 4);
+    //append all options to the select dropdown
+    select.append(option1, option2, option3, option4);
+    return select;
 }

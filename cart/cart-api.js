@@ -3,6 +3,7 @@ import { findById } from '../utils.js';
 const CART = 'CART';
 const defaultEmptyCart = [];
 
+
 export function getCart(){
     const stringCart = localStorage.getItem(CART);
     
@@ -32,16 +33,35 @@ export function clearCart(){
 export function addToCart(id){
     const localCart = getCart();
     const cartItem = findById(id, localCart);
+
+    const quantityToAdd = Number(getSelectedOption());
+
     if (cartItem){
-        cartItem.quantity++;
+        cartItem.quantity += quantityToAdd; 
     } else {
         const lineItem = {
             id: id,
-            quantity: 1,
+            quantity: quantityToAdd,
         };
         localCart.push(lineItem);
     }
     const stringLineItem = JSON.stringify(localCart);
     localStorage.setItem(CART, stringLineItem);
     return getCart();
+}
+
+function getSelectedOption() {
+    //get the select via its id
+    const select = document.getElementById('select');
+    //make a loop that keeps track of the current select item
+    //each iteration checks if the current item selected value is true
+    //if so function returns that value
+    let opt;
+    for (let i = 0; i < select.options.length; i++){
+        opt = select.options[i];
+        if (opt.selected === true) {
+            return opt.value;
+        }
+    }
+    return opt;
 }
