@@ -8,32 +8,38 @@
     <link rel="stylesheet" href="../styles/header-style.css">
   
     <link rel="stylesheet" href="../styles/style.css">
-    <title>Shopping Cart</title>
+    <title>Admin Page</title>
 </head>
 <body>
     <header>
         <h2>
-            Ride Wrangler
+            Ride Wrangler (ADMIN)
         </h2>
         <nav>
             <ul>
                 <li><a href="../index.html">HomePage</a></li>
                 <li><a href="../products/index.html">Shop</a></li>
-                <li><a href="#">Your Cart</a></li>
-                <li><a href="../admin/">Admin</a></li>
+                <li><a href="../cart/" >Your Cart</a></li>
+                <li><a href="#">Admin</a></li>
             </ul>
         </nav>
         
      </header>
+
+     <main>
+        <form action="post">
+            <h3>Add new product for purchase</h3>
+            <input type="text" name="id" placeholder="item ID">
+            <input type="text" name="item-name" placeholder="item-name">
+            <input type="text" name="img" placeholder="img url">
+            <input type="text" name="description" placeholder="describe this product">
+            <input type="text" name="category" placeholder="product category">
+            <input type="number" name="price" placeholder="product price">
+        </form>
+        <button>Submit Item</button>
+     </main>
     
-     <table id="table">
-         <th>Product</th>
-         <th>Quantity</th>
-         <th>Price</th>
-         <th>Line Total</th>
-     </table>
-     <button id="place-order">Place Order</button>
-     <button id="clear-cart"> Clear cart</button>
+     
      
      <script type="module" src="cart.js"></script>
 
