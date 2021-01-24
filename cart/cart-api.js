@@ -34,7 +34,7 @@ export function addToCart(id){
     const localCart = getCart();
     const cartItem = findById(id, localCart);
 
-    const quantityToAdd = Number(getSelectedOption());
+    const quantityToAdd = Number(getSelectedOption(id));
 
     if (cartItem){
         cartItem.quantity += quantityToAdd; 
@@ -50,9 +50,9 @@ export function addToCart(id){
     return getCart();
 }
 
-function getSelectedOption() {
+function getSelectedOption(id) {
     //get the select via its id
-    const select = document.getElementById('select');
+    const select = document.getElementById(`select-${id}`);
     //make a loop that keeps track of the current select item
     //each iteration checks if the current item selected value is true
     //if so function returns that value

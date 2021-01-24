@@ -29,6 +29,7 @@ export function renderCars(cars){
 
     const addButton = document.createElement('button');
     addButton.textContent = 'Add to cart';
+    addButton.setAttribute('id', `btn-${cars.id}`);
     addButton.addEventListener('click', () =>{
         addToCart(cars.id);
     });
@@ -42,7 +43,7 @@ export function renderCars(cars){
 function addSelect(id){
     //create a select element on DOM, and assign id attribute
     const select = document.createElement('select');
-    select.setAttribute('id', `select`);
+    select.setAttribute('id', `select-${id}`);
     //create options, set text content, and values
     const option1 = document.createElement('option');
     option1.textContent = 1;
