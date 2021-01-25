@@ -1,0 +1,69 @@
+body{
+    padding: 0;
+}
+
+.car-img{
+    display: block;
+    width: 425px;
+    height: 250px;
+    border-radius: 25px;
+    margin:  10px auto;
+}
+.economy, .sport, .crossover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+.main-section {
+    text-align: center;
+    margin: 20px auto;
+    height: 100%;
+    background-color: rgba(25, 100, 60, .2);
+    padding-right: 40px;
+}
+
+.economy{
+    background-color: silver;
+    color: white;
+}
+
+.sport{
+    background-color: tomato;
+    color: white;
+}
+
+.crossover{
+    background-color: teal;
+    color: white;
+}
+
+
+button{
+   margin: auto;
+    width: 100px;
+}
+
+.main-logo{
+    width: 100px;
+    height: 100px;
+}
+
+.cart-link{
+    background-color: rgba(0, 0, 0, .2);
+    border: rgba(0, 0, 0,1 ) solid 1px ;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background-color: rgba(25, 100, 60, .2);
+}
+
+.cart-link h2, .cart-link img{
+    margin: 5px auto;
+}
+

@@ -7,34 +7,76 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./products/styles/products.css">
+    <link rel="stylesheet" href="./styles/header-style.css">
+
+    <!-- <link rel="stylesheet" href="./products/styles/products.css"> -->
     
-    <title>Document</title>
+    <title>HomePage</title>
 </head>
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png"/>
-        </div>
+        <h2>
+            Ride Wrangler
+        </h2>
+       <nav>
+           <ul>
+               <li><a href="#" disable>HomePage</a></li>
+               <li><a href="./products/index.html">Shop</a></li>
+               <li><a href="./cart">Your Cart</a></li>
+               <li><a href="./admin/">Admin</a></li>
+           </ul>
+       </nav>
        
     </header>
     <main>
-        <section class="main-section">
-           <img class="main-logo" src="assets/alchemy-logo.png"/>
-             <h2>
-                Welcome to Alchemy Bootstrap!
-            </h2>
 
-            <h2><a href="products/index.html">Go here to see our products</a></h2>
-
-            <content>
+        <div class="top-main">
+            <span class="welcome-msg" >Find the perfect ride for you!</span>
             
+            <p>
+                We created <i>Ride Wrangler</i> to be a simple one-stop-shop for vehicles new and pre-owned. 
+            </p> <br/>
+            <p>
+                <u>No matter your lifestyle</u> <br/><em>We have what you're looking for!</em> <br/> Inquire online today!
+            </p>
+        </div>
+        <hr>
 
-        </section>
+       <div class="container">
+            <div class="side-by-side economy">
+                <a href="/products">
+                <div class="h-container">
+                    <h1>Feeling economic?</h1>
+                </div>
+                
+                    <img width="400px" src="./assets/toyotawithbackgounr.png" alt="">
+                </a> 
+            </div>
+
+            <div class="side-by-side sport">
+                <a href="/products">
+                <div class="h-container">
+                    <h1>Momma, I'm going fast!</h1>
+                </div>
+                
+                    <img  width="400px" src="./assets/bmwwithbackground.png" alt="">
+                </a> 
+            </div>
+
+            <div class="side-by-side crossover">
+                <a href="/products">
+                <div class="h-container">
+                    <h1>Need room for the kids?</h1>
+                </div>
+                
+                    <img  width="400px" src="./assets/hondaWithDrive.png" alt="">
+                </a> 
+            </div>
+        </div>
     </main>
     <footer>
-        <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
+        <div class="copy gutter-right">&copy; 2020 Ride Wrangler Labs</div>
     </footer>
 
     <script type="module" src="app.js"></script>
