@@ -1,3 +1,7 @@
+body{
+    padding: 0;
+}
+
 .car-img{
     display: block;
     width: 425px;
@@ -20,6 +24,7 @@
     margin: 20px auto;
     height: 100%;
     background-color: rgba(25, 100, 60, .2);
+    padding-right: 40px;
 }
 
 .economy{
@@ -54,5 +59,11 @@ button{
     border-radius: 10px;
     width: 50%;
     margin: auto;
+    text-align: center;
+    background-color: rgba(25, 100, 60, .2);
+}
+
+.cart-link h2, .cart-link img{
+    margin: 5px auto;
 }
 

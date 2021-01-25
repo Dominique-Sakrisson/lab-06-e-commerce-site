@@ -134,7 +134,11 @@ img{
 
 .side-by-side a:visited{
     text-decoration: none; 
-    decoration: none; 
+   
+}
+
+.side-by-side:hover{
+    background-color: rgba(25, 100, 60, .2);
 }
 
 .side-by-side h1{
@@ -155,7 +159,7 @@ img{
 }
 
 .economy, .economy a{
-    color: silver;
+    color: rgb(53,146,215);
 }
 
 .sport, .sport a{
