@@ -3,7 +3,7 @@ import { renderTableRow } from './render-table-row.js';
 import { getPriceTotal, findById, calcItemTotal } from '../utils.js';
 import { cars } from '../data/data.js';
 import { alertMsg } from './cart-handler.js';
-import { getCart, clearCart} from './cart-api.js';
+import { getCart, clearCart } from './cart-api.js';
 
 
 const table = document.querySelector('table');
@@ -48,7 +48,7 @@ if (cart.length === 0){
 } else {
     orderButton.addEventListener('click', () => {
         localStorage.removeItem('CART');
-        alert('Order placed: \n' + JSON.stringify(cart, true, 2));
+        alert(`Order placed: ${JSON.stringify(cart, true, 2)} Order total $${total}`);
         window.location = '../';
     });
 }

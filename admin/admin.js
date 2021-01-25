@@ -1,4 +1,6 @@
 
+
+
 const submitButton = document.createElement('button');
 
 export function createAddForm(){
@@ -15,12 +17,14 @@ export function createAddForm(){
     
 
     //set form attribute
-    //productForm.setAttribute('action', 'post');
+    productForm.setAttribute('action', 'localStorage');
     productForm.setAttribute('id', 'form');
     //set form header
     formHeader.textContent = 'Add new product for purchase';
-    //set button id
+
+    //set button attributes
     submitButton.setAttribute('id', 'submit');
+    submitButton.setAttribute('type', 'submit');
     //set button text
     submitButton.textContent = 'Submit New Item';
 
@@ -41,6 +45,15 @@ export function createAddForm(){
     inputCategory.setAttribute('name', 'category');
     inputPrice.setAttribute('name', 'price');
 
+    //set input max lengths
+    inputId.setAttribute('maxlength', '10');
+    inputName.setAttribute('maxlength', '10');
+    inputImg.setAttribute('maxlength', '40');
+    inputAbout.setAttribute('maxlength', '30');
+    inputCategory.setAttribute('maxlength', '10');
+    inputPrice.setAttribute('maxlength', '6');
+    
+
     //set input placeholders
     inputId.setAttribute('placeholder', 'product id');
     inputName.setAttribute('placeholder', 'product name');
@@ -49,6 +62,16 @@ export function createAddForm(){
     inputCategory.setAttribute('placeholder', 'product category');
     inputPrice.setAttribute('placeholder', 'product price');
     
+    //set input validations
+    inputId.setAttribute('required', 'required');
+    inputName.setAttribute('required', 'required');
+    inputImg.setAttribute('required', 'required');
+    inputAbout.setAttribute('required', 'required');
+    inputCategory.setAttribute('required', 'required');
+    inputPrice.setAttribute('required', 'required');
+    
+    
+
     //add inputs to the form
     productForm.append(inputId, inputName, inputImg, inputAbout, inputCategory, inputPrice, submitButton);
 
@@ -58,15 +81,34 @@ export function createAddForm(){
 createAddForm();
 
 
+function ObjectBuild(id, name, img, about, category, price){
+    this.id = id;
+    this.name = name;
+    this.img = img;
+    this.about = about;
+    this.category = category;
+    this.price = price;
+}
+
 submitButton.addEventListener('click', () => {
     const formDetails = document.getElementById('form').elements;
-    for (let i = 0; i < formDetails.length; i++){
-        let currentValue = formDetails[i].value;
-        console.log(currentValue);
-        alert(currentValue);
-    }
+    const zap = new ObjectBuild();
     
+    let currentValue;
+    for (let i = 0; i < formDetails.length; i++){
+        currentValue = formDetails[i].value;
+        zap.inputId = currentValue;
 
+
+        localStorage.setItem('summam', currentValue);
+       // if (currentValue.name)
+        
+       /* for (let ii = 0; formDetails.length; ii++){
+            //get the nam
+        }*/
+    }
+
+    const stringZap = JSON.stringify(zap);
+    localStorage.setItem(summam, stringZap);
+   
 });
-
-
