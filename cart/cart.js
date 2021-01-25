@@ -5,7 +5,6 @@ import { cars } from '../data/data.js';
 import { alertMsg } from './cart-handler.js';
 import { getCart, clearCart } from './cart-api.js';
 
-
 const table = document.querySelector('table');
 const orderButton = document.getElementById('place-order');
 const clearButton = document.getElementById('clear-cart');
@@ -16,7 +15,6 @@ const td2 = document.createElement('td');
 const td3 = document.createElement('td');
 
 const cart = getCart();
-console.log(cart);
 
 let total = 0;
 let classCount = 0;

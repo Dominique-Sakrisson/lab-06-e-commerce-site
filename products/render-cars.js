@@ -1,6 +1,4 @@
 import { addToCart } from '../cart/cart-api.js';
-//import { findById } from '../utils.js';
-
 
 export function renderCars(cars){
     const li = document.createElement('li');

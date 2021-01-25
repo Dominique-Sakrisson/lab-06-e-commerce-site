@@ -3,13 +3,11 @@ import { findById } from '../utils.js';
 const CART = 'CART';
 const defaultEmptyCart = [];
 
-
 export function getCart(){
     const stringCart = localStorage.getItem(CART);
     
     if (stringCart) {
         const parsedCart = JSON.parse(stringCart);
-       
         return parsedCart;
     } else {
         //No cart was found, give the user a cart to work with
